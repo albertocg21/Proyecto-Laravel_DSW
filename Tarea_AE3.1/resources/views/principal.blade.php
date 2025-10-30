@@ -17,5 +17,6 @@
 
         <button><a href="/login">Iniciar sesión</a></button>
         <button><a href="/register">Registrarse</a></button>
+        <button><a href="/reserva"> Reservar </a></button>
     </body>
 </html>
