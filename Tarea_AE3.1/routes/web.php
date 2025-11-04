@@ -13,7 +13,10 @@ Route::get('/principal', function () {
     return view('principal');
 })->name('principal');
 
-
+// 🔹 Reserva
+// Route::post('/reserva', function () {
+//     return view('reserva');
+// })->name('reserva');
 
 // 🔹 LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
