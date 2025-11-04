@@ -1,23 +1,30 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('principal');
 });
 
+// 🔹 Página principal
 Route::get('/principal', function () {
     return view('principal');
-});
+})->name('principal');
 
-Route::post('/reserva', function () {
+// 🔹 Reserva
+Route::get('/reserva', function () {
     return view('reserva');
-});
+})->name('reserva');
 
-Route::post('/login', function () {
-    return view('login');
-});
+// 🔹 LOGIN
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
 
-Route::post('/register', function () {
-    return view('register');
-});
+// 🔹 REGISTER
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+// 🔹 LOGOUT
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
