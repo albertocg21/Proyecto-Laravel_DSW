@@ -15,9 +15,9 @@ Route::get('/principal', function () {
 })->name('principal');
 
 // 🔹 Reserva
-Route::get('/reserva', function () {
-    return view('reserva');
-})->name('reserva');
+// Route::post('/reserva', function () {
+//     return view('reserva');
+// })->name('reserva');
 
 // 🔹 LOGIN
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
