@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReservaController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principal');
 });
 
 Route::get('/principal', function () {
@@ -21,3 +22,7 @@ Route::post('/login', function () {
 Route::post('/register', function () {
     return view('register');
 });
+
+Route::get('/reserva', [ReservaController::class, 'index'])->name('reserva.index');
+
+Route::post('/reserva', [ReservaController::class, 'store'])->name('reserva.store');
