@@ -58,7 +58,7 @@
             @endguest
 
             @auth
-                <p class="text-white font-semibold flex items-center">👋 {{ Auth::user()->name }}</p>
+                <p class="text-white font-semibold flex items-center">{{ Auth::user()->name }}</p>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" 
