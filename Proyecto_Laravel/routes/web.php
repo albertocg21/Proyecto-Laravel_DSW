@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::get('/', function () {
     return redirect()->route('principal');
@@ -26,8 +27,7 @@ Route::get('/reserva', [ReservaController::class, 'index'])->name('reserva.index
 
 Route::post('/reserva', [ReservaController::class, 'store'])->name('reserva.store');
 
-Route::get('/reservas/listado', [App\Http\Controllers\ReservaController::class, 'listado'])
-    ->name('reservas.listado');
+Route::get('/reservas/listado', [ReservaController::class, 'listado'])->name('reservas.listado');
 
 Route::middleware([
     'auth:sanctum',
@@ -39,7 +39,9 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// routes/web.php
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    // User creation (admin)
+    Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('admin.users.store');
 });
