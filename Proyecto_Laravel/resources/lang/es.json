@@ -1,0 +1,20 @@
+{
+    "The name field is required.": "El campo nombre es obligatorio.",
+    "The email field is required.": "El campo email es obligatorio.",
+    "The password field is required.": "El campo contraseña es obligatorio.",
+    "The password confirmation field is required.": "El campo confirmación de contraseña es obligatorio.",
+    "The name must be a string.": "El nombre debe ser texto.",
+    "The email must be a valid email address.": "El email debe ser válido.",
+    "The email has already been taken.": "El email ya está registrado.",
+    "The password must be at least 8 characters.": "La contraseña debe tener al menos 8 caracteres.",
+    "The password field confirmation does not match.": "Las contraseñas no coinciden.",
+    "The password must be at least 8 characters when updated.": "La contraseña debe tener al menos 8 caracteres.",
+    "The email field must be a valid email.": "El email debe ser válido.",
+    "The name field must be a string.": "El nombre debe ser texto.",
+    "The name may not be greater than 255 characters.": "El nombre no puede exceder 255 caracteres.",
+    "The email may not be greater than 255 characters.": "El email no puede exceder 255 caracteres.",
+    "Validation failed": "La validación falló",
+    "Usuario creado exitosamente.": "Usuario creado exitosamente.",
+    "Usuario actualizado exitosamente.": "Usuario actualizado exitosamente.",
+    "Usuario eliminado exitosamente.": "Usuario eliminado exitosamente."
+}

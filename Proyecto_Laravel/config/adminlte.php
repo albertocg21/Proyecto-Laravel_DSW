@@ -31,7 +31,7 @@ return [
     */
 
     'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Gym</b>Time',
+    'logo_img' => 'imagenes/gymtime.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'GymTime',
 
     /*
     |--------------------------------------------------------------------------
@@ -84,13 +84,13 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'Auth Logo',
+            'path' => 'imagenes/gymtime.png',
+            'alt' => 'GymTime',
             'class' => '',
-            'width' => 50,
-            'height' => 50,
+            'width' => 60,
+            'height' => 60,
         ],
     ],
 
@@ -113,8 +113,8 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'imagenes/gymtime.png',
+            'alt' => 'GymTime Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
             'height' => 60,
@@ -316,16 +316,26 @@ return [
             'text' => 'search',
         ],
         [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
+            'text' => 'Dashboard',
+            'url' => '/admin',
+            'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
         [
-            'text' => 'pages',
-            'url' => 'admin/dashboard',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
+            'text' => 'Gestión de Usuarios',
+            'url' => '/admin/users',
+            'icon' => 'fas fa-fw fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Listar Usuarios',
+                    'url' => '/admin/users',
+                    'icon' => 'fas fa-fw fa-list',
+                ],
+                [
+                    'text' => 'Crear Usuario',
+                    'url' => '/admin/users/create',
+                    'icon' => 'fas fa-fw fa-user-plus',
+                ],
+            ],
         ],
         ['header' => 'account_settings'],
         [
