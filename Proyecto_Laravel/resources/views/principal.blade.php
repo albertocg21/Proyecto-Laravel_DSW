@@ -97,17 +97,17 @@
             <h2 class="text-3xl md:text-4xl font-extrabold text-white text-center mb-8">Características destacadas</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-black bg-opacity-40 p-6 rounded-lg shadow-md">
-                    <img src="{{ asset('imagenes/gymtime.png') }}" alt="icon" class="w-12 h-12 mb-4">
+                    <img src="{{ asset('imagenes/agenda.png') }}" alt="icon" class="w-12 h-12 mb-4">
                     <h3 class="text-xl font-semibold text-white mb-2">Reservas fáciles</h3>
                     <p class="text-gray-200">Reserva clases o espacios en segundos desde el calendario interactivo.</p>
                 </div>
                 <div class="bg-black bg-opacity-40 p-6 rounded-lg shadow-md">
-                    <img src="{{ asset('imagenes/gymtime.png') }}" alt="icon" class="w-12 h-12 mb-4">
+                    <img src="{{ asset('imagenes/tickverde.png') }}" alt="icon" class="w-18 h-12 mb-4">
                     <h3 class="text-xl font-semibold text-white mb-2">Confirmaciones automáticas</h3>
                     <p class="text-gray-200">Recibe confirmaciones y notificaciones para evitar confusiones.</p>
                 </div>
                 <div class="bg-black bg-opacity-40 p-6 rounded-lg shadow-md">
-                    <img src="{{ asset('imagenes/gymtime.png') }}" alt="icon" class="w-12 h-12 mb-4">
+                    <img src="{{ asset('imagenes/controlmultidtud.png') }}" alt="icon" class="w-12 h-12 mb-4">
                     <h3 class="text-xl font-semibold text-white mb-2">Control de aforo</h3>
                     <p class="text-gray-200">Gestiona el aforo por franjas horarias y evita sobre-reservas.</p>
                 </div>
