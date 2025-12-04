@@ -1,9 +1,20 @@
+{{-- 
+    Vista de Crear Usuario
+    ======================
+    Formulario para crear un nuevo usuario con:
+    - Nombre (requerido, máx 255 caracteres)
+    - Email (requerido, válido, único)
+    - Contraseña (requerida, mín 8 caracteres, confirmación)
+    
+    Validaciones en cliente: @error() muestra mensajes de validación
+    Validaciones en servidor: se realizan en UserController@store()
+--}}
 @extends('adminlte::page')
 
 @section('title', 'Crear Usuario')
 
 @section('content_header')
-    <h1>Crear nuevo usuario</h1>
+    <h1>Crear Nuevo Usuario</h1>
 @stop
 
 @section('content')

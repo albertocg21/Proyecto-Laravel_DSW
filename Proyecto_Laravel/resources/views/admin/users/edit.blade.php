@@ -1,9 +1,24 @@
+{{-- 
+    Vista de Editar Usuario
+    =======================
+    Formulario para editar un usuario existente con:
+    - Nombre (requerido, máx 255 caracteres)
+    - Email (requerido, válido, único excepto el del usuario actual)
+    - Contraseña (opcional - si está vacía mantiene la actual)
+    
+    Validaciones en cliente: @error() muestra mensajes de validación
+    Validaciones en servidor: se realizan en UserController@update()
+    
+    Lógica especial de contraseña:
+    - Si está vacía: se ignora y se mantiene la anterior
+    - Si está llena: se encripta con Hash::make() y se actualiza
+--}}
 @extends('adminlte::page')
 
 @section('title', 'Editar Usuario')
 
 @section('content_header')
-    <h1>Editar usuario: {{ $user->name }}</h1>
+    <h1>Editar Usuario: {{ $user->name }}</h1>
 @stop
 
 @section('content')

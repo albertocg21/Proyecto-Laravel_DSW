@@ -16,5 +16,6 @@
     "Validation failed": "La validación falló",
     "Usuario creado exitosamente.": "Usuario creado exitosamente.",
     "Usuario actualizado exitosamente.": "Usuario actualizado exitosamente.",
-    "Usuario eliminado exitosamente.": "Usuario eliminado exitosamente."
+    "Usuario eliminado exitosamente.": "Usuario eliminado exitosamente.",
+    "No puedes eliminar tu propio usuario.": "No puedes eliminar tu propio usuario."
 }

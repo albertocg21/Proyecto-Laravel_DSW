@@ -1,3 +1,12 @@
+{{-- 
+    Vista de Listado de Usuarios
+    ============================
+    Muestra una tabla paginada (10 usuarios por página) con:
+    - ID, Nombre, Email, Fecha de Registro
+    - Botones para editar y eliminar
+    - El botón eliminar está deshabilitado si es el usuario actual (auto-protección)
+    - Mensajes de éxito/error tras operaciones CRUD
+--}}
 @extends('adminlte::page')
 
 @section('title', 'Gestión de Usuarios')
@@ -5,11 +14,11 @@
 @section('content_header')
     <div class="row">
         <div class="col-md-6">
-            <h1>Usuarios</h1>
+            <h1>Gestión de Usuarios</h1>
         </div>
         <div class="col-md-6 text-right">
             <a href="{{ route('users.create') }}" class="btn btn-primary">
-                <i class="fas fa-plus"></i> Crear Usuario
+                <i class="fas fa-plus"></i> Nuevo Usuario
             </a>
         </div>
     </div>
@@ -19,6 +28,13 @@
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>¡Éxito!</strong> {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if ($message = Session::get('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error:</strong> {{ $message }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
@@ -52,13 +68,19 @@
                                 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning">
                                     <i class="fas fa-edit"></i> Editar
                                 </a>
-                                <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro de que desea eliminar este usuario?');">
+                                @if (auth()->user()->id !== $user->id)
+                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro de que desea eliminar este usuario?');">
+                                            <i class="fas fa-trash"></i> Eliminar
+                                        </button>
+                                    </form>
+                                @else
+                                    <button type="button" class="btn btn-sm btn-danger" disabled title="No puedes eliminar tu propio usuario.">
                                         <i class="fas fa-trash"></i> Eliminar
                                     </button>
-                                </form>
+                                @endif
                             </td>
                         </tr>
                     {{-- lo que hace @empty es mostrar un mensaje en caso de que no haya usuarios en la base de datos --}}
