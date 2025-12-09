@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
@@ -15,13 +13,8 @@ Route::get('/principal', function () {
     return view('principal');
 })->name('principal');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-
-Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
-
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Authentication routes are handled by Laravel Fortify / Jetstream
+// (Fortify registers its own login/register/logout routes when enabled in providers)
  
 Route::get('/reserva', [ReservaController::class, 'index'])->name('reserva.index');
 
