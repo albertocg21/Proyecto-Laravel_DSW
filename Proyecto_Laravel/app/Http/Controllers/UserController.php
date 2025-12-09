@@ -138,12 +138,18 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         // Impedir que un usuario intente eliminarse a sí mismo
-        if (auth()->user()->id === $user->id) {
+        if ((string) auth()->id() === (string) $user->getKey()) {
             return redirect()->route('users.index')
                             ->with('error', 'No puedes eliminar tu propio usuario.');
         }
 
-        $user->delete();
+        try {
+            $user->delete();
+        } catch (\Illuminate\Database\QueryException $e) {
+            // Capturamos excepciones de base de datos (ej. restricciones FK)
+            return redirect()->route('users.index')
+                            ->with('error', 'No se pudo eliminar el usuario. Compruebe dependencias.');
+        }
 
         return redirect()->route('users.index')
                         ->with('success', 'Usuario eliminado exitosamente.');
