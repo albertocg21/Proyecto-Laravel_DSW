@@ -45,8 +45,6 @@ class UserController extends Controller
      * 
      * La contraseña se encripta con Hash::make() antes de guardarse.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse Redirige a index con mensaje de éxito
      */
     public function store(Request $request)
     {
@@ -97,9 +95,6 @@ class UserController extends Controller
      * - Si está vacía: se mantiene la contraseña anterior (no se actualiza)
      * - Si está llena: se encripta con Hash::make() y se actualiza
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\User $user Usuario a actualizar (obtenido por model binding)
-     * @return \Illuminate\Http\RedirectResponse Redirige a index con mensaje de éxito
      */
     public function update(Request $request, User $user)
     {
@@ -129,11 +124,9 @@ class UserController extends Controller
     /**
      * Elimina el usuario especificado del almacenamiento.
      * 
-     * IMPORTANTE: Valida que el usuario actual no intente eliminarse a sí mismo.
+     * Valida que el usuario actual no intente eliminarse a sí mismo.
      * Si lo intenta, retorna un mensaje de error sin eliminar.
      *
-     * @param \App\Models\User $user Usuario a eliminar
-     * @return \Illuminate\Http\RedirectResponse Redirige a index con mensaje de éxito o error
      */
     public function destroy(User $user)
     {
