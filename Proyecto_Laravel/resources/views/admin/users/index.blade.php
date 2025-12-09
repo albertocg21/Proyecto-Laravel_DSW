@@ -68,7 +68,7 @@
                                 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning">
                                     <i class="fas fa-edit"></i> Editar
                                 </a>
-                                @if ((string) auth()->id() !== (string) $user->getKey())
+                                @if (auth()->user()->id !== $user->id)
                                     <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
@@ -81,6 +81,8 @@
                                         <i class="fas fa-trash"></i> Eliminar
                                     </button>
                                 @endif
+         </button>
+                                </form>
                             </td>
                         </tr>
                     {{-- lo que hace @empty es mostrar un mensaje en caso de que no haya usuarios en la base de datos --}}
