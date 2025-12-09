@@ -87,7 +87,11 @@ return [
         'enabled' => true,
         'img' => [
             'path' => 'imagenes/gymtime.png',
+<<<<<<< HEAD
             'alt' => 'GymTime',
+=======
+            'alt' => 'Gymtime',
+>>>>>>> main
             'class' => '',
             'width' => 60,
             'height' => 60,
@@ -114,7 +118,11 @@ return [
         'mode' => 'fullscreen',
         'img' => [
             'path' => 'imagenes/gymtime.png',
+<<<<<<< HEAD
             'alt' => 'GymTime Preloader Image',
+=======
+            'alt' => 'Gymtime Preloader Image',
+>>>>>>> main
             'effect' => 'animation__shake',
             'width' => 60,
             'height' => 60,
@@ -342,6 +350,11 @@ return [
             'text' => 'profile',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Crear Usuario',
+            'route' => 'admin.users.create',
+            'icon' => 'fas fa-user-plus',
         ],
         [
             'text' => 'change_password',
