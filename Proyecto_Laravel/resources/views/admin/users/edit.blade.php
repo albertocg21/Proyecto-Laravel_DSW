@@ -29,7 +29,7 @@
                     <h3 class="card-title">Formulario de edición</h3>
                 </div>
 
-                <form action="{{ route('users.update', $user->id) }}" method="POST" class="form-horizontal">
+                <form action="{{ route('admin.users.update', $user->id) }}" method="POST" class="form-horizontal">
                     @csrf
                     @method('PUT')
                     
@@ -99,7 +99,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Actualizar Usuario</button>
-                        <a href="{{ route('users.index') }}" class="btn btn-default float-right">Cancelar</a>
+                        <a href="{{ route('admin.users.index') }}" class="btn btn-default float-right">Cancelar</a>
                     </div>
                 </form>
             </div>

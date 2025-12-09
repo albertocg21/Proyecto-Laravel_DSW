@@ -25,7 +25,7 @@
                 <div class="icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <a href="{{ route('users.index') }}" class="small-box-footer">
+                <a href="{{ route('admin.users.index') }}" class="small-box-footer">
                     Ver detalles <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="{{ route('users.index') }}" class="btn btn-sm btn-info">
+                    <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-info">
                         <i class="fas fa-list"></i> Ver todos los usuarios
                     </a>
                 </div>

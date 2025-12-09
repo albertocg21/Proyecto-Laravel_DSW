@@ -26,7 +26,7 @@
                     <h3 class="card-title">Formulario de creación</h3>
                 </div>
 
-                <form action="{{ route('users.store') }}" method="POST" class="form-horizontal">
+                <form action="{{ route('admin.users.store') }}" method="POST" class="form-horizontal">
                     @csrf
                     <div class="card-body">
                         <!-- Campo Nombre -->
@@ -98,7 +98,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Crear Usuario</button>
-                        <a href="{{ route('users.index') }}" class="btn btn-default float-right">Cancelar</a>
+                        <a href="{{ route('admin.users.index') }}" class="btn btn-default float-right">Cancelar</a>
                     </div>
                 </form>
             </div>

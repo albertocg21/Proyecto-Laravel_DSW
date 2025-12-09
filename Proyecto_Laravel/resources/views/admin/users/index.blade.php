@@ -17,7 +17,7 @@
             <h1>Gestión de Usuarios</h1>
         </div>
         <div class="col-md-6 text-right">
-            <a href="{{ route('users.create') }}" class="btn btn-primary">
+            <a href="{{ route('admin.users.create') }}" class="btn btn-primary">
                 <i class="fas fa-plus"></i> Nuevo Usuario
             </a>
         </div>
@@ -65,11 +65,11 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
                             <td>
-                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning">
+                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-warning">
                                     <i class="fas fa-edit"></i> Editar
                                 </a>
                                 @if (auth()->user()->id !== $user->id)
-                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
+                                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro de que desea eliminar este usuario?');">
