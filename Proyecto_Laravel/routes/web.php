@@ -3,11 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\AdminController;
-<<<<<<< HEAD
 use App\Http\Controllers\UserController;
-=======
-use App\Http\Controllers\Admin\UserController;
->>>>>>> main
 
 Route::get('/', function () {
     return redirect()->route('principal');
@@ -36,7 +32,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-<<<<<<< HEAD
 // Route::middleware(['auth']) → Aplica el middleware auth a todas las rutas dentro
 // .group(function () { }) → Agrupa múltiples rutas bajo las mismas condiciones
 // ¿Qué hace el middleware auth?
@@ -101,17 +96,4 @@ Route::middleware(['auth'])->group(function () {
             'destroy' => 'users.destroy',
         ]);
     });
-=======
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-    // User creation (admin)
-    Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
-    Route::post('/users', [UserController::class, 'store'])->name('admin.users.store');
->>>>>>> main
 });
-
-
-
-
-
-
