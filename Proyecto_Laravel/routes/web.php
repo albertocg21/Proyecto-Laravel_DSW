@@ -34,7 +34,6 @@ Route::middleware([
 
 // Route::middleware(['auth']) → Aplica el middleware auth a todas las rutas dentro
 // .group(function () { }) → Agrupa múltiples rutas bajo las mismas condiciones
-// ¿Qué hace el middleware auth?
 // Solo permite acceder a estas rutas si el usuario está autenticado (logged in). Si no está logueado, Laravel lo redirige al login.
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
