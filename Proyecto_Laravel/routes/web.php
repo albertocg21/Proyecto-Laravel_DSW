@@ -39,6 +39,9 @@ Route::middleware([
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
+    // Ruta para ver todas las reservas en admin
+    Route::get('/admin/reservas', [ReservaController::class, 'adminIndex'])->name('admin.reservas.index');
+
     /*
     =====================================================
     RUTAS MANUALES PARA CRUD DE USUARIOS (COMENTADAS)

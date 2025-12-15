@@ -41,7 +41,7 @@
                 <div class="icon">
                     <i class="fas fa-calendar-check"></i>
                 </div>
-                <a href="#" class="small-box-footer">
+                <a href="{{ route('admin.reservas.index') }}" class="small-box-footer">
                     Ver detalles <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>

@@ -89,5 +89,11 @@ class ReservaController extends Controller
         // Enviamos todas las reservas a la vista listado_reservas.blade.php para mostrarlas en una tabla o lista
         return view('listado_reservas', compact('reservas'));
     }
-}
 
+    // Método para mostrar todas las reservas en el panel de administración (lee de la base de datos)
+    public function adminIndex()
+    {
+        $reservas = Reserva::all();
+        return view('admin.reservas.index', compact('reservas'));
+    }
+}
