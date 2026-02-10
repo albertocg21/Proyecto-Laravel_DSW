@@ -1,7 +1,7 @@
 # API Testing Script - Quick Verification
 # This PowerShell script tests all API endpoints
 
-$baseUrl = "http://localhost/Proyecto-Laravel-AE3.1/Proyecto_Laravel/public/api/v1"
+$baseUrl = "http://localhost:8000/api/v1"
 $headers = @{
     "Accept" = "application/json"
     "Content-Type" = "application/json"
