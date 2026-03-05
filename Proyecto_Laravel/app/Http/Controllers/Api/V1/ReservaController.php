@@ -1,5 +1,4 @@
 <?php
-//mensaje para poder subir las cosas a la rama
 
 namespace App\Http\Controllers\Api\V1;
 
